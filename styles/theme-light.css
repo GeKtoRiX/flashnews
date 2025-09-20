@@ -1,0 +1,107 @@
+/*  Body */
+.light-theme {
+  color: #333333;
+  background-color: #eae9f2;
+}
+/* Header */
+.light-theme .page-header {
+  background-color: #ffffff;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.light-theme .header-link {
+  color: var(--accent-color);
+}
+
+.light-theme .header-link::before {
+  color: var(--accent-color);
+  background: url("../img/icons/arrow-back-light.svg") no-repeat 0 0;
+}
+.light-theme .theme-button {
+  color: var(--accent-color);
+  border: 1px solid var(--accent-color);
+}
+.light-theme .theme-button::before {
+  background-image: url("../img/icons/moon-normal.svg");
+}
+
+/* Pop-Up Menu */
+.light-theme .main-menu {
+  color: #ffffff;
+  background-color: var(--accent-color);
+}
+/* Button Burger (moved from main.css) */
+.light-theme .menu-open {
+  background-color: #ffffff;
+  background-image: url(../img/icons/menu-open-light.svg);
+}
+.light-theme .menu-close {
+  background-color: var(--accent-color);
+  background-image: url(../img/icons/menu-close.svg);
+}
+
+/* Buttons Row-Tile Checked */
+.light-theme .news-view .view-checked {
+  color: #ffffff;
+  background-color: var(--accent-color);
+}
+/* Buttons Row-Tile General */
+.light-theme .news-view button {
+  border: 1px solid var(--accent-color);
+  color: var(--accent-color);
+}
+/* Row Button img */
+.light-theme .row-view.view-checked::before {
+  background-image: url(../img/icons/rows-light-checked.svg);
+}
+.light-theme .row-view::before {
+  background-image: url(../img/icons/rows-light.svg);
+}
+/* Tile Button img */
+.light-theme .tile-view.view-checked::before {
+  background-image: url(../img/icons/tiles-light-checked.svg);
+}
+.light-theme .tile-view::before {
+  background-image: url(../img/icons/tiles-light.svg);
+}
+
+/* Article new-block styles */
+.light-theme .new-block {
+  background-color: #ffffff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+.light-theme .new-block time {
+  color: #aaaaaa;
+}
+/* Aside cookies-agreement */
+.light-theme .cookies-agreement {
+  background-color: #fdeacd;
+  box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.2);
+}
+.light-theme .button {
+  color: #ffffff;
+  background-color: var(--accent-color);
+}
+/* Footer Page-footer */
+.light-theme .page-footer {
+  color: #ffffff;
+  background-color: var(--accent-color);
+}
+
+.light-theme .subscription-message {
+  background-color: var(--accent-color);
+  color: #eae9f2;
+}
+.light-theme .subscription-message::before {
+  background-image: url("../img/icons/icon-ok-light.svg");
+}
+
+.light-theme .subscription {
+  background-color: #ffffff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.light-theme .subscription-email {
+  border-bottom: 1px solid var(--accent-color);
+  color: #333333;
+}

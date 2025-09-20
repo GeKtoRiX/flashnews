@@ -1,0 +1,257 @@
+/* --------> GENERAL <-------- */
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --accent-color: #6653d9;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Verdana, Tahoma, sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  overflow-y: scroll;
+}
+a {
+  font: inherit;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* --------> GENERAL-CLASS <-------- */
+.page {
+  /* In PROGRESS */
+}
+.container {
+  display: flex;
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+/* --------> HEADER <-------- */
+
+.page-header .container {
+  min-height: 42px;
+}
+.header-logo {
+  display: flex;
+  margin-right: auto;
+  align-items: center;
+}
+.page-theme {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 50px;
+  z-index: 1;
+  background-image: url(../img/icons/moon-normal.svg);
+  cursor: pointer;
+}
+/* --------> NAV <-------- */
+/* Button Burger */
+.menu {
+  position: relative;
+  border: none;
+  width: 42px;
+  height: 42px;
+  margin-right: -10px;
+  margin-left: 24px;
+  font-size: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+
+/* Pop-Up Menu-Nav*/
+.main-menu {
+  position: absolute;
+  z-index: 1;
+  top: 42px;
+  right: 0;
+  padding: 0;
+}
+.main-menu ul {
+  margin: 0;
+  padding: 10px 0;
+  list-style: none;
+}
+.main-menu a {
+  display: block;
+  padding: 10px 56px 10px 20px;
+}
+/* Open-Close Pop-Up */
+.menu-open + .main-menu {
+  display: none;
+}
+
+/* --------> MAIN <-------- */
+.index-main {
+  padding: 0;
+  /* WHY? ---> */
+  min-height: calc(100vh - 84px);
+}
+.index-main .container {
+  flex-direction: column;
+}
+
+/* --------> Hidden H1-H3 <-------- */
+.visually-hidden:not(:focus):not(:active) {
+  /* Убирает элемент из потока(нужно для старого clip:) */
+  position: absolute;
+  /* Если есть рамка по умолчанию — чтобы не осталось видимых артефактов */
+  border: 0;
+  /* Сжимает до минимального «физического» размера (элемент остаётся доступным для фокуса/скринридера*/
+  width: 1px;
+  height: 1px;
+  /* Чуть уводит 1×1 пиксель за пределы видимой области/контента, чтобы даже этот пиксель не «мелькал» и не давал скроллбар */
+  margin: -1px;
+  /* Чтобы внутренние отступы не раздували элемент. */
+  padding: 0;
+  /* Запрещает переносы строк внутри 1px ширины. Иначе длинный текст «нарежется» на тысячи строк и может «вылезти». */
+  white-space: nowrap;
+  /* Современное отсечение: «вырезать» всё содержимое, сдвинув границы отсечения на 100% со всех сторон → невидимо. */
+  clip-path: inset(100%);
+  /* Легаси-вариант того же (устаревший, но оставляют для старых браузеров). Требует position:absolute; */
+  clip: rect(0 0 0 0);
+  /* На случай, если что-то всё же выходит за пределы — не показывать. */
+  overflow: hidden;
+}
+
+/* --------> Buttons Row-Tile views <-------- */
+.news-view {
+  display: flex;
+  margin: 20px 0;
+}
+/* Button */
+.news-view button {
+  border-radius: 16px;
+  position: relative;
+  display: block;
+  margin-right: 10px;
+  padding: 7px 16px 7px 34px;
+  background-color: transparent;
+}
+
+.row-view,
+.tile-view {
+  cursor: pointer;
+}
+
+/* Row box img */
+.row-view::before {
+  position: absolute;
+  content: "";
+  width: 12px;
+  height: 10px;
+  top: 9px;
+  left: 16px;
+}
+/* Tile box img */
+.tile-view::before {
+  position: absolute;
+  content: "";
+  width: 10px;
+  height: 10px;
+  top: 9px;
+  left: 16px;
+}
+
+/* --------> Section news-list <-------- */
+/* Grid Section */
+.news-list {
+  margin-bottom: 20px;
+}
+.new-block {
+  display: flex;
+  margin-bottom: 10px;
+  padding: 12px 12px 16px;
+  cursor: pointer;
+}
+.new-block img {
+  /* Элемент не будет уменьшаться, он сохранит свои заданные размеры, даже если остальным элементам придётся ужаться */
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  margin-right: 12px;
+  /* Изображение обрезается, но при этом полностью заполняет контейнер и сохраняет пропорции */
+  object-fit: cover;
+}
+.new-block h3 {
+  margin: 0 0 4px;
+  font-size: 14px;
+  line-height: 20px;
+  user-select: none;
+}
+.new-block p {
+  margin: 0 0 8px;
+  user-select: none;
+}
+.new-block time {
+  margin: 0;
+  user-select: none;
+}
+/* Tile section */
+.list-tiles-view.news-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px 10px;
+  margin: 0;
+}
+.list-tiles-view .new-block {
+  flex-direction: column;
+}
+.list-tiles-view .new-block img {
+  position: relative;
+  width: calc(100% + 24px);
+  height: 146px;
+  top: -12px;
+  left: -12px;
+  margin: 0;
+}
+
+/* --------> ASIDE cookies-agreementt <-------- */
+.cookies-agreement {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px 20px;
+}
+.button {
+  border: none;
+  border-radius: 2px;
+  padding: 7px 16px;
+  font-size: 12px;
+}
+.cookies-agreement .button {
+  margin-left: auto;
+}
+.cookies-agreement-closed {
+  display: none;
+}
+
+/* FOOTER Page-footer */
+.page-footer {
+  min-height: 42px;
+  margin-top: auto;
+  user-select: none;
+}
+.page-footer p {
+  margin: auto 0;
+}
+.footer-logo {
+  display: block;
+  margin-left: auto;
+  padding: 6px 0 3px;
+}
